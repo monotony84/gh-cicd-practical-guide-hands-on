@@ -9,4 +9,4 @@ jobs:
       - run: echo "${BRANCH}"
       - uses: actions/checkout@v4
         with:
-          refL ${{ env.BRANCH}}
+          ref: ${{ env.BRANCH}}
