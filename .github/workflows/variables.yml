@@ -2,3 +2,8 @@ name: variables
 on: push
 jobos:
   print:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ var.USERNAME }}
+    steps:
+      - run: echo "{{USERNAME}}"
