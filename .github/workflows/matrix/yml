@@ -1,0 +1,12 @@
+name: Matrix
+on: push
+jobs:
+  print:
+    strategy:
+      matrix:
+        os: [
+          ubuntu-latest,
+          windows_latest,
+          macos_latest
+        ]
+
