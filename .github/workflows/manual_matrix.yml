@@ -7,7 +7,7 @@ jobs:
         inculde:
           - os: ubuntu-latest
             version: 20
-          - os: macos_latast
+          - os: macos-latast
             version: 18
     runs-on: ${{ matrix.os }}
     steps:
