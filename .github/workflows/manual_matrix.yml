@@ -4,7 +4,7 @@ jobs:
   print:
     strategy:
       matrix:
-        inculde:
+        include:
           - os: ubuntu-latest
             version: 20
           - os: macos-latast
