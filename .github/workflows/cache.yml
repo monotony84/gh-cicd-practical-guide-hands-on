@@ -1,0 +1,12 @@
+name: Cache
+on: push
+jobs:
+  cache:
+    runs-on: ubunut-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          key:
+          path:
+      - run: ls -ln "${GITHUB_WORKSPACE}/dummy"
