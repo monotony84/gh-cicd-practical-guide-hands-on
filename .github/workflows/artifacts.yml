@@ -10,3 +10,12 @@ jobs:
           name: uploaded
           path: date.txt
           retention-days: 7
+  download:
+    runs-on: ubuntu-latest
+    needs: [upload]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: uploaded
+          path: downloaded
+      - run: cat downloaded/date.txt
