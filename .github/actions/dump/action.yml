@@ -12,3 +12,7 @@ outputs:
     value: ${{ steps.current.outputs.date }}
     description: ダンプ日時
 runs:
+  using: composite
+  steps:
+    - run: printenv | sort
+      shell: bash
