@@ -1,0 +1,24 @@
+name: Reusable Workflows
+on:
+  workflow_call:
+    inputs:
+      pr-number:
+        type: string
+        default: ${{ github.event.pull_request.number }}
+        required: false
+        description: todo
+    secrets:
+      token:
+        required: true
+        description: todo
+    outputs:
+      message:
+        value: ${{ jobs.comment.outputs.pr-comment }}
+        description: todo
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: pr-comment
+        run: echo hoge
