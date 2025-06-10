@@ -18,7 +18,18 @@ on:
 jobs:
   comment:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - id: pr-comment
-        run: echo hoge
+        run: |
+          body="Welcome, ${GITHUB_ACTOR}"
+          gh pr comment "${PR_NUMBER}" --body "${body}"
+          echo "body=${body}" >> "${GITHUB_OUTPUT}"
+        env:
+          PR_NUMBER: ${{ inputs.pr-number }}
+          GITHUB_TOKEN: ${{ secrets.token }}
+    outputs:
+      pr-comment: ${{ steps.pr-comment.outputs.body }}
