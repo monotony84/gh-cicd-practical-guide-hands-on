@@ -6,15 +6,15 @@ on:
         type: string
         default: ${{ github.event.pull_request.number }}
         required: false
-        description: todo
+        description: pull request number
     secrets:
       token:
         required: true
-        description: todo
+        description: github token
     outputs:
       message:
         value: ${{ jobs.comment.outputs.pr-comment }}
-        description: todo
+        description: message
 jobs:
   comment:
     runs-on: ubuntu-latest
