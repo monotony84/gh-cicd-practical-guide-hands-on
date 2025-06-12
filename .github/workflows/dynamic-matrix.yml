@@ -1,0 +1,12 @@
+name: Dynamic matrix
+on: push
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - id: dynamic
+        run: |
+          json='{"runner": ["ubuntu-latest", "macos-latest"]}'
+          echo "json=${json}" >> ${GITHUB_OUTPUT}
+    outputs:
+        matrix-json: ${{ steps.dynamic.outputs.json}}
